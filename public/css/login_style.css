@@ -22,19 +22,47 @@ a, nav a:visited
 
 /******** LAPTOP ********/
 
-@media (min-width:801px)
+@media (min-width:1025px)
 {
     body
     {
         width:100%;
-        min-width:801px;
+        min-width:1025px;
+    }
+
+}
+
+@media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait)
+{
+    body
+    {
+        width: 100%;
+        max-width: 1024px;
+        min-width: 801px;
+        min-height: 100vh;
+    }
+
+    .col {
+        padding: 25px;
+        margin-top: 6px;
+    }
+    
+    .modal-content {
+        width: 69vw;
+    }
+
+    footer
+    {
+        position: absolute; 
+        width: 100vw;
+        bottom: 0;
     }
 
 }
 
 /******** TABLET ********/
 
-@media (min-width: 501px) and (max-width: 800px)
+@media (min-width: 501px) and (max-width: 800px) and (orientation: portrait)
 {
     body
     {
@@ -49,13 +77,14 @@ a, nav a:visited
     }
     
     .modal-content {
-        width: 80%;
+        width: 80vw;
     }
 
     footer
     {
         position: absolute; 
-        left: 0 ; right: 0; bottom: 0; 
+        width: 100vw;
+        bottom: 0;
     }
 
 }

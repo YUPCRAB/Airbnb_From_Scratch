@@ -193,7 +193,7 @@ app.post("/Login", (req, res)=>
 
     if (req.body.l_emailadd == "" || req.body.l_password == "")
     {
-        err.push("*** Login failed, please check your login info");
+        err.push("*** Login failed");
     }
 
     if(err.length > 0)

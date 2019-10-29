@@ -67,7 +67,7 @@ nav a
     background-color: #fefefe;
     margin: 10% auto;/* 5% from the top, 15% from the bottom and centered */
     border: 2px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 50vw; /* Could be more or less, depending on screen size */
 }
 
 .errs
@@ -342,12 +342,99 @@ figcaption
 
 /******** LAPTOP ********/
 
-@media screen and (min-width:801px)
+@media screen and (min-width:1025px)
 {
     body
     {
         width:100%;
-        min-width:801px;
+        min-width:1025px;
+    }
+
+}
+
+@media screen and (min-width: 801px) and (max-width: 1024px)
+{
+    body
+    {
+        max-width: 1024px;
+        min-width: 801px;
+    }
+
+    header
+    {
+        width: 100%;
+        border-bottom: #393939;
+    }
+
+    .modal-content {
+        width: 59vw; /* Could be more or less, depending on screen size */
+    }
+
+    .btn {
+        padding: 8px;
+        margin: 5px 0;
+        font-size: 1rem;
+        line-height: 10px;
+    }
+
+    /* Two-column layout */
+    .col {
+        padding: 25px;
+        margin-top: 6px;
+    }
+
+    .or
+    {
+        line-height: 0.1rem;
+        margin: 15px 0;
+    }
+
+    .txtbx,.adultslct {
+        padding: 8px;
+        font-size: 1rem;
+        line-height: 10px;
+    }
+
+    .three-grids
+    {
+        grid-gap: 21px
+    }
+
+    .four-grids
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 21px;
+    }
+
+    .footer1
+    {
+        padding: 15px 50px 0 10px;
+    }
+
+    .footer2
+    {
+        padding-bottom: 15px;
+    }
+
+    .footer2 span
+    {
+        font-size: 1.2rem;
+    }
+
+    .footer2 i
+    {
+        font-size: 1.3rem;
+    }
+
+    .footer2 nav a
+    {
+        line-height: 2.5rem;
+    }
+
+    .audivcon
+    {
+        margin: 1.2rem 8%;
     }
 
 }
@@ -369,7 +456,7 @@ figcaption
     }
 
     .modal-content {
-        width: 66%; /* Could be more or less, depending on screen size */
+        width: 66vw; /* Could be more or less, depending on screen size */
     }
 
     .btn {
