@@ -171,6 +171,13 @@ nav a
     background: none;
 }
 
+.datebx
+{
+    width: 100%;
+    color: #696969;
+    border: none;
+}
+
 .txtbx,.adultslct {
     text-align: left;
     max-width: 100%;

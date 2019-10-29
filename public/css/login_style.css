@@ -75,59 +75,9 @@ a, nav a:visited
         width: 100%;
     }
 
-    /* .col {
-        padding: 29px;
-        width: 100%;
+    .col {
+        padding: 25px;
+        margin-top: 6px;
     }
-
-    .bookingtitle
-    {
-        font-size: 1.5rem;
-    }
-
-    .promotion
-    {
-        padding: 1.5%;
-    }
-
-    .promocontain
-    {
-        padding: 3.6% 6%;
-    }
-
-    .promotxt
-    {
-        width: 46%;
-    }
-
-    .promotxt h2
-    {
-        font-size: 1rem;
-    }
-
-    .vdio
-    {
-        margin: 0;
-        padding-bottom: 0;
-    }
-
-    .audiv h1, .audivcon h1
-    {
-        font-size: 1.6rem;
-    }
-
-    figure
-    {
-        width: 100%;
-        text-align: center;
-        padding-top: 10%;
-    }
-
-    .headshot
-    {
-        width: 77%;
-        height: 300px;;
-        padding-bottom: 0;
-    } */
 
 }
