@@ -31,6 +31,10 @@ alinktologin.onclick = function(event) {
         //return res.render('Login');
         window.location.href = "/Login";
     }
+    else
+    {
+        document.getElementById('id03').style.display='block';
+    }
 }
 
 alinktosignup.onclick = function(event) {
@@ -39,5 +43,9 @@ alinktosignup.onclick = function(event) {
         //alert('Hi');
         //return res.render('Login');
         window.location.href = "/SignUp";
+    }
+    else
+    {
+        document.getElementById('id01').style.display='block';
     }
 }
