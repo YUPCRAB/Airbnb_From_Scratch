@@ -11,6 +11,13 @@ a, nav a:visited
     margin-top: 6px;
 }
 
+.datebx
+{
+    width: 100%;
+    color: #696969;
+    border-color: #ffffff;
+}
+
 .modal-content {
     background-color: white;
     margin: 2% auto 5% auto;/* 5% from the top, 15% from the bottom and centered */
