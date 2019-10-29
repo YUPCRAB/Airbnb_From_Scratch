@@ -15,3 +15,78 @@ a, nav a:visited
 {
     padding-top: .4rem;
 }
+
+.audivcon h1
+{
+    line-height: 2rem;
+    padding-bottom: 3rem;
+}
+
+/******** RESPONSIVE DESIGN ********/
+
+/******** LAPTOP ********/
+
+@media (min-width:801px)
+{
+    body
+    {
+        width:100%;
+        min-width:801px;
+    }
+
+}
+
+/******** TABLET ********/
+
+@media (min-width: 501px) and (max-width: 800px)
+{
+    body
+    {
+        width: 100%;
+        max-width: 800px;
+        min-width: 501px;
+    }
+
+    .headshot
+    {
+        height: 150px;;
+    }
+
+}
+
+/******** SMARTPHONE ********/
+
+@media (max-width: 500px)
+{
+    body
+    {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    figure
+    {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10%;
+    }
+
+    .headshot
+    {
+        width: 88%;
+        height: 150px;;
+        padding-bottom: 0;
+    }
+
+    .audivcon h1
+    {
+        font-size: 1.6rem;
+        padding-bottom: 0;
+    }
+
+    .three-grids
+    {
+        padding-top: 0;
+    }
+
+}

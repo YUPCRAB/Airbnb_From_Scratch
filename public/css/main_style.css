@@ -25,6 +25,7 @@ header
     /* background-image: url("/img/Main_Pic.jpg");
     background-size: cover;
     height: 100vh; */
+    max-width: 100%;
     padding: 5vh 4vw;
     display: grid;
     grid-template-columns: 20px 1fr;
@@ -34,8 +35,8 @@ header
 nav a
 {
     align-self: center;
-    margin-top: 2;
-    margin-right: 1rem;
+    padding-top: 2;
+    padding-right: 1rem;
     font-size: 1rem;
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
@@ -67,6 +68,15 @@ nav a
     margin: 10% auto;/* 5% from the top, 15% from the bottom and centered */
     border: 2px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.errs
+{
+    padding: .2rem 0;
+    color: #dd4b39;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #ffdab9;
 }
 
 /* style inputs and link buttons */
@@ -319,4 +329,190 @@ figcaption
     line-height: 1rem;
     font-size: .8rem;
     color: #696969;
+}
+
+/******** RESPONSIVE DESIGN ********/
+
+/******** LAPTOP ********/
+
+@media screen and (min-width:801px)
+{
+    body
+    {
+        width:100%;
+        min-width:801px;
+    }
+
+}
+
+/******** TABLET ********/
+
+@media screen and (min-width: 501px) and (max-width: 800px)
+{
+    body
+    {
+        max-width: 800px;
+        min-width: 501px;
+    }
+
+    header
+    {
+        width: 100%;
+        border-bottom: #393939;
+    }
+
+    .modal-content {
+        width: 66%; /* Could be more or less, depending on screen size */
+    }
+
+    .btn {
+        padding: 8px;
+        margin: 5px 0;
+        font-size: 1rem;
+        line-height: 10px;
+    }
+
+    /* Two-column layout */
+    .col {
+        padding: 25px;
+        margin-top: 6px;
+    }
+
+    .or
+    {
+        line-height: 0.1rem;
+        margin: 15px 0;
+    }
+
+    .txtbx,.adultslct {
+        padding: 8px;
+        font-size: 1rem;
+        line-height: 10px;
+    }
+
+    .three-grids
+    {
+        grid-gap: 21px
+    }
+
+    .four-grids
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 21px;
+    }
+
+    .footer1
+    {
+        padding: 15px 50px 0 10px;
+    }
+
+    .footer2
+    {
+        padding-bottom: 15px;
+    }
+
+    .footer2 span
+    {
+        font-size: 1.2rem;
+    }
+
+    .footer2 i
+    {
+        font-size: 1.3rem;
+    }
+
+    .footer2 nav a
+    {
+        line-height: 2.5rem;
+    }
+
+    .audivcon
+    {
+        margin: 1.2rem 8%;
+    }
+
+}
+
+/******** SMARTPHONE ********/
+
+@media (max-width: 500px)
+{
+    body
+    {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    header
+    {
+        width: inherit;
+        padding: 3vh 8vw;
+        line-height: 4vh;
+        display: block;
+        text-align: left;
+    }
+
+    nav a
+    {
+        padding-top: 5px;
+        padding-right: 3vw;
+    }
+
+    .two-grids
+    {
+        max-width: 100%;
+        display: block;
+    }
+
+    .three-grids
+    {
+        display: block;
+    }
+
+    .four-grids
+    {
+        display: block;
+    }
+
+    .footer2
+    {
+        padding-bottom: 15px;
+    }
+
+    .footer2
+    {
+        padding: 0 19px 15px 19px;
+    }
+
+    .footer2 span
+    {
+        font-size: 1.2rem;
+    }
+
+    .footer2 i
+    {
+        font-size: 1.3rem;
+    }
+
+    .footer2 nav a
+    {
+        line-height: 2.5rem;
+        padding-bottom: 25px;
+    }
+
+    .audivcon
+    {
+        margin: 1.2rem 8%;
+        line-height: 1.2rem;
+    }
+
+    .footer1
+    {
+        display: block;
+        justify-items: center;
+        text-align: center;
+        padding: 25px;
+    }
+
 }

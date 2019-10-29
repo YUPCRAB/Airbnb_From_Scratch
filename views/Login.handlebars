@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="/css/login_style.css">
+</head>
+
+<div class="modal-content">
+    <div class="col">
+        <form action="/Login" method="POST">
+            <a href="#" class="fb btn"><i class="fab fa-facebook-f"></i> Log in with Facebook</a>
+            <a href="#" class="google btn"><i class="fab fa-google-plus-g"></i> Log in with Google+</a>
+            <p class="or"><span>or</span></p>
+            {{#each errmessage}}<div class="errs alignleft">{{this}}</div>{{/each}}
+            <input type="email" name="l_emailadd" placeholder="Email Address" class="txtbx">
+            <input type="password" name="l_password" placeholder="Password" class="txtbx">
+            <div class="chkbx greytxt">
+                <input id="rmb" class="alignleft" type="checkbox" name="rmbme" value="no">
+                <label for="rmbme" class="alignleft">Remamber me</label>
+            </div>
+            <input type="submit" class="btn email" value="Log in">
+            <br><br>
+            <p class="aligncenter"><a href="#" class="bluelink">Forget password?</a></p>
+            <br><hr><br>
+            <p class="alignleft">Don't have an account? <a href="#" class="bluelink" onclick="document.getElementById('id03').style.display='none'; document.getElementById('id01').style.display='block'">Sign up</a></p>
+        </form>
+    </div>
+</div>
