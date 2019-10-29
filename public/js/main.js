@@ -1,7 +1,7 @@
 // Get the modal
-var modal1 = document.getElementById('id01');
-var modal2 = document.getElementById('id02');
-var modal3 = document.getElementById('id03');
+let modal1 = document.getElementById('id01');
+let modal2 = document.getElementById('id02');
+let modal3 = document.getElementById('id03');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal1) {
@@ -18,5 +18,26 @@ window.onclick = function(event) {
         modal1.style.display = "none";
         modal2.style.display = "none";
         modal3.style.display = "none";
+    }
+}
+
+let alinktosignup = document.getElementById('signupbut');
+let alinktologin = document.getElementById('loginbut');
+
+alinktologin.onclick = function(event) {
+    if (window.matchMedia("(max-width: 500px)").matches) {
+        /* The viewport is less than, or equal to, 700 pixels wide */
+        //alert('Hi');
+        //return res.render('Login');
+        window.location.href = "/Login";
+    }
+}
+
+alinktosignup.onclick = function(event) {
+    if (window.matchMedia("(max-width: 500px)").matches) {
+        /* The viewport is less than, or equal to, 700 pixels wide */
+        //alert('Hi');
+        //return res.render('Login');
+        window.location.href = "/SignUp";
     }
 }
