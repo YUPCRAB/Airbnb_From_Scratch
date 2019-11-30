@@ -4,14 +4,15 @@
 
 <div class="modal-content">
     <div class="col">
-        <form action="/SignUp" method="POST">
+        <form action="/user/SignUp" method="POST">
             <p class="aligncenter">Sign up with <a href="#" class="bluelink">Facebook</a> or <a href="#" class="bluelink">Google</a></p>
             <p class="or"><span>or</span></p>
             {{#each message}}<div class="errs alignleft">{{this}}</div>{{/each}}
             <input type="email" name="emailadd" placeholder="Email address" class="txtbx">
             <input type="text" name="fname" placeholder="First name" class="txtbx">
             <input type="text" name="lname" placeholder="Last name" class="txtbx">
-            <input type="password" name="crtpassword" placeholder="Create a password" class="txtbx">
+            <input type="password" name="crtpassword1" placeholder="Create a password" class="txtbx">
+            <input type="password" name="crtpassword2" placeholder="Confirm your password" class="txtbx">
             <h4 class="alignleft">Birthday</h4>
             <p class="alignleft greytxt">To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
             <input type="date" name="bday" class="txtbx greytxt" placeholder="yyyy-mm-dd">

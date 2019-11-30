@@ -1,0 +1,82 @@
+<header>
+    <a href="#" class="abicon"><i class="fab fa-airbnb"></i></a>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/roomList">Listing</a>
+        {{#if user}}
+            <a href="/user/dashboard">Dashboard</a>
+            <a href="/user/logout">Logout</a>
+        {{else}}
+            <a href="#" onclick="document.getElementById('id01').style.display='block'" id="signupbut">
+                Sign Up</a>
+            <a href="#" onclick="document.getElementById('id03').style.display='block'" id="loginbut">
+                Log in</a>
+        {{/if}}
+    </nav>
+    <div id="id01" class="modal1">
+        <div class="modal-content">
+            <div class="col">
+                <a href="#" class="fb btn"><i class="fab fa-facebook-f"></i> Continue with Facebook</a>
+                <a href="#" class="google btn"><i class="fab fa-google-plus-g"></i> Continue with Google+</a>
+                <p class="or"><span>or</span></p>
+                <a href="#" class="email btn" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'"><i class="fa fa-envelope fa-fw"></i> Sign up with Email</a>
+                <p class="alignleft">Already have an Airbnb account? <a href="#" class="bluelink" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id03').style.display='block'">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="id02" class="modal2">
+        <div class="modal-content">
+            <div class="col">
+                <form action="/user/SignUp" method="POST">
+                    <p class="aligncenter">Sign up with <a href="#" class="bluelink">Facebook</a> or <a href="#" class="bluelink">Google</a></p>
+                    <p class="or"><span>or</span></p>
+                    {{#each message}}<div class="errs alignleft">{{this}}</div>{{/each}}
+                    <input type="email" name="emailadd" placeholder="Email address" class="txtbx">
+                    <input type="text" name="fname" placeholder="First name" class="txtbx">
+                    <input type="text" name="lname" placeholder="Last name" class="txtbx">
+                    <input type="password" name="crtpassword1" placeholder="Create a password" class="txtbx">
+                    <input type="password" name="crtpassword2" placeholder="Confirm your password" class="txtbx">
+                    <h4 class="alignleft">Birthday</h4>
+                    <p class="alignleft greytxt">To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
+                    <input type="date" name="bday" class="txtbx greytxt">
+                    <br>
+                    <p class="alignleft greytxt">We’ll send you marketing promotions, special offers, inspiration, and policy updates via email.</p>
+                    <input type="submit" class="btn email" value="Sign up">
+                    <div class="chkbx greytxt">
+                        <input id="cb" class="alignleft" type="checkbox" name="noemail" value='Yes'>
+                        <label for="noemail" class="alignleft">I don’t want to receive marketing messages from Airbnb. I can also opt out of receiving these at any time in my account settings or via the link in the message.</label>
+                    </div>
+                    <br><hr><br>
+                    <p class="alignleft">Already have an Airbnb account? <a href="#" class="bluelink" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id03').style.display='block'">Log in</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="id03" class="modal3">
+        <div class="modal-content">
+            <div class="col">
+                <form action="/user/Login" method="POST">
+                    <a href="#" class="fb btn"><i class="fab fa-facebook-f"></i> Log in with Facebook</a>
+                    <a href="#" class="google btn"><i class="fab fa-google-plus-g"></i> Log in with Google+</a>
+                    <p class="or"><span>or</span></p>
+                    {{#each errmessage}}<div class="errs alignleft">{{this}}</div>{{/each}}
+                    <input type="email" name="l_emailadd" placeholder="Email Address" class="txtbx">
+                    <input type="password" name="l_password" placeholder="Password" class="txtbx">
+                    <div class="chkbx greytxt">
+                        <input id="rmb" class="alignleft" type="checkbox" name="rmbme" value="no">
+                        <label for="rmbme" class="alignleft">Remamber me</label>
+                    </div>
+                    <input type="submit" class="btn email" value="Log in">
+                    <br><br>
+                    <p class="aligncenter"><a href="#" class="bluelink">Forget password?</a></p>
+                    <br><hr><br>
+                    <p class="alignleft">Don't have an account? <a href="#" class="bluelink" onclick="document.getElementById('id03').style.display='none'; document.getElementById('id01').style.display='block'">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script src="/js/main.js"></script>

@@ -3,7 +3,7 @@ let alinktologin = document.getElementById('loginbut');
 
 alinktologin.onclick = function(event) {
     if (window.matchMedia("(max-width: 500px)").matches) {
-        window.location.href = "/Login";
+        window.location.href = "/user/Login";
     }
     else
     {
@@ -13,7 +13,7 @@ alinktologin.onclick = function(event) {
 
 alinktosignup.onclick = function(event) {
     if (window.matchMedia("(max-width: 500px)").matches) {
-        window.location.href = "/SignUp";
+        window.location.href = "/user/SignUp";
     }
     else
     {

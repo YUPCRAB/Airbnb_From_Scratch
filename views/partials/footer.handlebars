@@ -1,0 +1,27 @@
+<footer>
+    <div class="footer1">
+        <img src="/img/AirBnbLogo.png" alt="AirBnb Logo" width="160">
+        <h2>Belong Anywhere</h2>
+    </div>
+    <div class="footer2">
+        <span>Follow us</span><br><a href="#"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;<a href="#"><i class="fab fa-youtube"></i></a>&nbsp;&nbsp;<a href="#"><i class="fab fa-instagram"></i></a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/roomList">Listing</a>
+            {{#if user}}
+            <a href="/user/dashboard">Dashboard</a>
+            <a href="/user/logout">Logout</a>
+            {{else}}
+            <a href="#" onclick="document.getElementById('id01').style.display='block'" id="signupbut">
+                Sign Up</a>
+            <a href="#" onclick="document.getElementById('id03').style.display='block'" id="loginbut">
+                Log in</a>
+            {{/if}}
+            
+        </nav>
+        <p>Wherever you are, we have the perfect place for you.</p>
+    </div>
+    <div class="footer3">
+        <p>This site is for Seneca College Fall 2019 WEB322 student (142358167) assignment delivery only. No commercial use.</p>
+    </div>
+</footer>

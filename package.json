@@ -4,18 +4,29 @@
   "description": "",
   "main": "MyAirBnb.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node MyAirBnb.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUPCRAB/F2019_WEB322.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YUPCRAB/F2019_WEB322/issues"
+  },
+  "homepage": "https://github.com/YUPCRAB/F2019_WEB322#readme",
   "dependencies": {
-    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "mongoose": "^5.7.7",
+    "express-session": "^1.17.0",
+    "heroku": "^7.35.0",
+    "mongoose": "^5.7.12",
     "nodemailer": "^6.3.1",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "sendgrid": "^5.2.3"
   }
 }
