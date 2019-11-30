@@ -338,6 +338,11 @@ figcaption
     color: #696969;
 }
 
+.brder
+{
+    border: #696969 solid 1px;
+}
+
 /******** RESPONSIVE DESIGN ********/
 
 /******** LAPTOP ********/
