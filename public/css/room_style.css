@@ -1,0 +1,147 @@
+a, nav a:visited
+{
+    color: #393939;
+}
+
+.col {
+    float: center;
+    width: auto;
+    margin: auto;
+    padding: 40px;
+    margin-top: 6px;
+}
+
+.des
+{
+    height: 10vh;
+}
+
+.roombtn
+{
+    display: inline;
+    font-family: 'Kalam', cursive;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 1rem;
+}
+
+label
+{
+    font-family: 'Kalam', cursive;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.green
+{
+    background-color: #008000;
+}
+
+.yellow
+{
+    background-color: #ebc700;
+}
+
+.red
+{
+    background-color: #e26666;
+}
+
+.aligncenter
+{
+    text-align: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 2% auto 5% auto;/* 5% from the top, 15% from the bottom and centered */
+    border: 2px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/******** RESPONSIVE DESIGN ********/
+
+/******** LAPTOP ********/
+
+@media (min-width:1025px)
+{
+    body
+    {
+        width:100%;
+        min-width:1025px;
+    }
+
+}
+
+@media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait)
+{
+    body
+    {
+        width: 100%;
+        max-width: 1024px;
+        min-width: 801px;
+        min-height: 100vh;
+    }
+
+    .col {
+        padding: 25px;
+        margin-top: 6px;
+    }
+    
+    .modal-content {
+        width: 69vw;
+    }
+
+    footer
+    {
+        position: absolute; 
+        width: 100vw;
+        bottom: 0;
+    }
+
+}
+
+/******** TABLET ********/
+
+@media (min-width: 501px) and (max-width: 800px)
+{
+    body
+    {
+        width: 100%;
+        max-width: 800px;
+        min-width: 501px;
+    }
+
+    .col {
+        padding: 25px;
+        margin-top: 6px;
+    }
+    
+    .modal-content {
+        width: 80vw;
+    }
+
+}
+
+/******** SMARTPHONE ********/
+
+@media (max-width: 500px)
+{
+    body
+    {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .modal-content {
+        border: none;
+        width: 100%;
+    }
+
+    .col {
+        padding: 25px;
+        margin-top: 6px;
+    }
+
+}

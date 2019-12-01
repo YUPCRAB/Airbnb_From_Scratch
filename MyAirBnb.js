@@ -4,8 +4,8 @@ const express = require("express");
 const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const methodOverride = require('method-override');
-// const fileupload = require("express-fileupload");
+const methodOverride = require('method-override');
+const fileupload = require("express-fileupload");
 const session = require("express-session");
 
 //This loads all our environment variables from the keys.env
@@ -23,6 +23,10 @@ let app = express();
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+app.use(methodOverride('_method'));
+
+app.use(fileupload())
 
 app.use(express.static("public"));
 

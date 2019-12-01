@@ -1,19 +1,37 @@
 <head>
-    <link rel="stylesheet" href="/css/dash_style.css">
+    <link rel="stylesheet" href="/css/room_style.css">
 </head>
 
 
 
 <div class="audivcon">
     <h1 class="aligncenter">{{user.FName}} {{user.LName}} (Admin), Welcome to MyAirBnb!</h1><br>
-    <p class="aligncenter welcomeinfo">
-        Please be aware that an email has been sent to you for validation purpose. <br>
-        If you have not received it within 30 minutes, please check your spam folder or contact us. <br>
-        Thank you for choosing MyAirBnb!
-    </p><br>
-    <h2 class="aligncenter">Start Your Journey Now</h2><br>
+    <br><br>
+    <div class="aligncenter">
+        <a href="/admin/createRoom" class="roombtn green">&nbsp;&nbsp;Add a Listing&nbsp;&nbsp;</a>
+    </div>
+    <br><br><br>
+    <h2 class="aligncenter">Current Listings</h2><br>
     <div class="three-grids">
+        {{#each rooms}} 
         <figure>
+            {{#if RoomPic}}
+                <a href="/admin/room/{{this._id}}"><img src="/RoomPics/{{RoomPic}}" class="headshot"></a>
+            {{else}}
+                <a href="#"><img src="/RoomPics/default.jpg" class="headshot"></a>
+            {{/if}}
+            <figcaption>{{title}}</figcaption>
+            <figcaption class="smallerfont">{{location}}</figcaption>
+            <br>
+            <a href="/admin/edit/{{this._id}}" class="roombtn yellow">&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <form id="deleteButtonForm" method="POST" action="/admin/delete/{{this._id}}?_method=DELETE" class="roombtn">
+                <input type="submit" class="roombtn red" value="&nbsp;Delete&nbsp;" data-id="{{this.id}}" data-title="{{this.title}}">
+            </form>
+        </figure>
+        {{else}}
+            No rooms in database 
+        {{/each}}
+        {{!-- <figure>
             <a href="#"><img src="/img/Japan.JPG" alt="Japan" class="headshot"></a>
             <figcaption>JAPAN</figcaption>
             <figcaption class="smallerfont">Starting from $29 CAD/night</figcaption>
@@ -27,7 +45,7 @@
             <a href="#"><img src="/img/US.JPG" alt="New York" class="headshot"></a>
             <figcaption>US</figcaption>
             <figcaption class="smallerfont">Starting from $39 CAD/night</figcaption>
-        </figure>
+        </figure> --}}
     </div>
     <br><br><br>
 </div>

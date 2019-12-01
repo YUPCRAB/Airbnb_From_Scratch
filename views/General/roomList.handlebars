@@ -3,9 +3,22 @@
 </head>
 
 <div class="audivcon">
-    <h1 class="aligncenter audivcon">Check Out Our New Listings</h1>
+    <h1 class="aligncenter audivcon">Check Out Our Listings</h1>
     <div class="three-grids">
+        {{#each rooms}} 
         <figure>
+            {{#if RoomPic}}
+                <a href="#"><img src="/RoomPics/{{RoomPic}}" class="headshot"></a>
+            {{else}}
+                <a href="#"><img src="/RoomPics/default.jpg" class="headshot"></a>
+            {{/if}}
+            <figcaption>{{location}} | {{title}}</figcaption>
+            <figcaption class="smallerfont">${{price}} CAD/night</figcaption>
+        </figure>
+        {{else}}
+            <h3 class="aligncenter">Sorry, something went wrong!</h3>
+        {{/each}}
+        {{!-- <figure>
             <a href="#"><img src="/img/listing/1.jpg" alt="1pic" class="headshot"></a>
             <figcaption>Entire condominium | 1 bed<br>KING WEST EXECUTIVE SUITE</figcaption>
             <figcaption class="smallerfont">$100 CAD/night</figcaption>
@@ -34,7 +47,7 @@
             <a href="#"><img src="/img/listing/6.jpg" alt="6pic" class="headshot"></a>
             <figcaption>Private room | 2 beds<br>STYLISH DOWNTOWN DOUBLE ROOM</figcaption>
             <figcaption class="smallerfont">$59 CAD/night</figcaption>
-        </figure>
+        </figure> --}}
     </div>
     <br><br><br>
 </div>

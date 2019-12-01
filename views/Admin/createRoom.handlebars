@@ -1,0 +1,20 @@
+<head>
+    <link rel="stylesheet" href="/css/room_style.css">
+</head>
+
+<h2 class="aligncenter">Add a Listings</h2><br>
+<div class="modal-content">
+    <div class="col">
+        <form action="/admin/createRoom" method="POST" enctype="multipart/form-data">
+            {{#each errors}}<div class="errs alignleft">{{this}}</div>{{/each}}
+            <input type="text" name="title" placeholder="Room Title" class="txtbx">
+            <input type="text" name="price" placeholder="Price" class="txtbx">
+            <input type="text" name="location" placeholder="Location" class="txtbx">
+            <textarea name="detail" placeholder="Description/Detail" class="txtbx des"></textarea>
+            <br>
+            <input type="file" name="RoomPic">
+            <br>
+            <input type="submit" class="btn email" value="Create This Listing">
+        </form>
+    </div> 
+</div>

@@ -3,14 +3,19 @@
     <nav>
         <a href="/">Home</a>
         <a href="/roomList">Listing</a>
-        {{#if user}}
-            <a href="/user/dashboard">Dashboard</a>
+        {{#if user.Admin}}
+            <a href="/admin/dashboard">Dashboard</a>
             <a href="/user/logout">Logout</a>
         {{else}}
-            <a href="#" onclick="document.getElementById('id01').style.display='block'" id="signupbut">
-                Sign Up</a>
-            <a href="#" onclick="document.getElementById('id03').style.display='block'" id="loginbut">
-                Log in</a>
+            {{#if user}}
+            <a href="/user/dashboard">Dashboard</a>
+            <a href="/user/logout">Logout</a>
+            {{else}}
+                <a href="#" onclick="document.getElementById('id01').style.display='block'" id="signupbut">
+                    Sign Up</a>
+                <a href="#" onclick="document.getElementById('id03').style.display='block'" id="loginbut">
+                    Log in</a>
+            {{/if}}
         {{/if}}
     </nav>
     <div id="id01" class="modal1">

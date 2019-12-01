@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="/css/room_style.css">
+</head>
+
+<h2 class="aligncenter">Edit a Listings</h2><br>
+<div class="modal-content">
+    <div class="col">
+        <form method="POST" action="/admin/edit/{{room._id}}/?_method=PUT" enctype="multipart/form-data">
+            {{#each errors}}<div class="errs alignleft">{{this}}</div>{{/each}}
+
+            <label>Title: </label>
+            <input type="text" name="title" value="{{room.title}}" class="txtbx"><br>
+
+            <label>Price: </label>
+            <input type="text" name="price" value="{{room.price}}" class="txtbx"><br>
+
+            <label>Location: </label>
+            <input type="text" name="location" value="{{room.location}}" class="txtbx"><br>
+
+            <label>Description: </label>
+            <textarea name="detail" class="txtbx des">{{room.detail}}</textarea><br>
+
+            <label>Room Picture: </label>
+            <img src="/RoomPics/{{room.RoomPic}}" class="headshot">
+            <br>
+
+            <input type="file" name="RoomPicU">
+            <br><br>
+
+            <input type="submit" class="btn email" value="Edit This Listing">
+        </form>
+    </div> 
+</div>

@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="/css/room_style.css">
+</head>
+
+<h2 class="aligncenter">Listing Detail</h2><br>
+<div class="modal-content">
+    <div class="col">
+        <div>
+            <label>Title: </label>
+            <p class="txtbx">{{room.title}}</p>
+        </div> 
+        <br>
+        <div>
+            <label>Price: </label>
+            <p class="txtbx">{{room.price}}</p>
+        </div>
+        <br>
+        <div>
+            <label>Location: </label>
+            <p class="txtbx">{{room.location}}</p>
+        </div>
+        <br>
+        <div>
+            <label>Description: </label>
+            <p class="txtbx">{{room.detail}}</p>
+        </div> 
+        <br>
+        <div>
+            <label>Room Picture: </label>
+            <img src="/RoomPics/{{room.RoomPic}}" class="headshot">
+        </div>
+        <a href="/admin/dashboard" class="roombtn red aligncenter">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
+    </div> 
+</div>

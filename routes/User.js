@@ -2,8 +2,7 @@
 const express = require('express')
 const router = express.Router();
 const bcrypt= require("bcryptjs");
-const path = require("path");
-const hasAccess= require("../middleware/auth");
+const hasAccessUser= require("../middleware/authUser");
 
 //This allows you to pefrom CRUD operations on the User colections 
 const User = require("../models/User");
@@ -199,7 +198,7 @@ router.post("/Login", (req, res)=>
 });
 
 
-router.get("/dashboard", hasAccess, (req, res)=>
+router.get("/dashboard", hasAccessUser, (req, res)=>
 {
     res.render('User/dash');
 });
