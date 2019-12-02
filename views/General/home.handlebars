@@ -5,68 +5,70 @@
 <div id="id04" class="modal4">
     <div class="modal-content4">
         <div class="col4">
-            <h2 class="aligncenter bookingtitle">Book homes, hotels, and more on Airbnb</h2>
-            <br>
-            <div>
-                <label for="where" class="bookinglabel">WHERE</label>
-                <div class="adultslct">
-                    <select name="where" class="slctbx">
-                        <option value="Toronto">Toronto</option>
-                        <option value="Vancouver">Vancouver</option>
-                        <option value="Montreal">Montreal</option>
-                        <option value="Calgary">Calgary</option>
-                        <option value="Ottawa">Ottawa</option>
-                        <option value="Quebec City">Quebec City</option>
-                    </select>
-                </div>
-            </div>
-            <div class="two-grids">
+            <form action="/" method="POST">
+                <h2 class="aligncenter bookingtitle">Book homes, hotels, and more on Airbnb</h2>
+                <br>
                 <div>
-                    <label for="checkin" class="bookinglabel">CHECK-IN</label>
-                    <input type="date" name="checkin" class="txtbx greytxt" placeholder="yyyy-mm-dd">
-                </div>
-                <div>
-                    <label for="checkout" class="bookinglabel">CHECK-OUT</label>
-                    <input type="date" name="checkout" class="txtbx greytxt" placeholder="yyyy-mm-dd">
-                </div>
-            </div>
-            <div class="two-grids">
-                <div>
-                    <label for="adults" class="bookinglabel">ADULTS</label>
+                    <label for="where" class="bookinglabel">WHERE</label>
                     <div class="adultslct">
-                        <select name="adults" class="slctbx">
-                            <option value="1">1 adult</option>
-                            <option value="2">2 adults</option>
-                            <option value="3">3 adults</option>
-                            <option value="4">4 adults</option>
-                            <option value="5">5 adults</option>
-                            <option value="6">6 adults</option>
-                            <option value="7">7 adults</option>
-                            <option value="8">8 adults</option>
-                            <option value="9">9 adults</option>
-                            <option value="10">10 adults</option>
-                            <option value="11">11 adults</option>
-                            <option value="12">12 adults</option>
+                        <select name="where" class="slctbx">
+                            <option value="Toronto">Toronto</option>
+                            <option value="Vancouver">Vancouver</option>
+                            <option value="Montreal">Montreal</option>
+                            <option value="Calgary">Calgary</option>
+                            <option value="Ottawa">Ottawa</option>
+                            <option value="Quebec City">Quebec City</option>
                         </select>
                     </div>
                 </div>
-                <div>
-                    <label for="children" class="bookinglabel">CHILDREN</label>
-                    <div class="adultslct">
-                        <select name="children" class="slctbx">
-                            <option value="0">0 children</option>
-                            <option value="1">1 children</option>
-                            <option value="2">2 children</option>
-                            <option value="3">3 children</option>
-                            <option value="4">4 children</option>
-                            <option value="5">5 children</option>
-                            <option value="6">6 children</option>
-                        </select>
+                <div class="two-grids">
+                    <div>
+                        <label for="checkin" class="bookinglabel">CHECK-IN</label>
+                        <input type="date" name="checkin" class="txtbx greytxt" placeholder="yyyy-mm-dd">
+                    </div>
+                    <div>
+                        <label for="checkout" class="bookinglabel">CHECK-OUT</label>
+                        <input type="date" name="checkout" class="txtbx greytxt" placeholder="yyyy-mm-dd">
                     </div>
                 </div>
-            </div>
-            <br>
-            <input type="submit" class="btn email" value="Search"> 
+                <div class="two-grids">
+                    <div>
+                        <label for="adults" class="bookinglabel">ADULTS</label>
+                        <div class="adultslct">
+                            <select name="adults" class="slctbx">
+                                <option value="1">1 adult</option>
+                                <option value="2">2 adults</option>
+                                <option value="3">3 adults</option>
+                                <option value="4">4 adults</option>
+                                <option value="5">5 adults</option>
+                                <option value="6">6 adults</option>
+                                <option value="7">7 adults</option>
+                                <option value="8">8 adults</option>
+                                <option value="9">9 adults</option>
+                                <option value="10">10 adults</option>
+                                <option value="11">11 adults</option>
+                                <option value="12">12 adults</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="children" class="bookinglabel">CHILDREN</label>
+                        <div class="adultslct">
+                            <select name="children" class="slctbx">
+                                <option value="0">0 children</option>
+                                <option value="1">1 children</option>
+                                <option value="2">2 children</option>
+                                <option value="3">3 children</option>
+                                <option value="4">4 children</option>
+                                <option value="5">5 children</option>
+                                <option value="6">6 children</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" class="btn email" value="Search"> 
+            </form>
         </div>
     </div>
 </div>

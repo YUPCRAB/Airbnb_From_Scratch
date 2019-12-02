@@ -8,12 +8,17 @@
         {{#each rooms}} 
         <figure>
             {{#if RoomPic}}
-                <a href="#"><img src="/RoomPics/{{RoomPic}}" class="headshot"></a>
+                <a href="/room/{{this._id}}"><img src="/RoomPics/{{RoomPic}}" class="headshot"></a>
             {{else}}
-                <a href="#"><img src="/RoomPics/default.jpg" class="headshot"></a>
+                <a href="/room/{{this._id}}"><img src="/RoomPics/default.jpg" class="headshot"></a>
             {{/if}}
             <figcaption>{{location}} | {{title}}</figcaption>
             <figcaption class="smallerfont">${{price}} CAD/night</figcaption>
+            <div class="aligncenter padding-top">
+                <form method="POST" action="/roomList/book/{{this._id}}?_method=POST" class="roombtn">
+                    <input type="submit" class="roombtn" value="&nbsp;&nbsp;Book Now&nbsp;&nbsp;" data-id="{{this.id}}" data-title="{{this.title}}">
+                </form>
+            </div>
         </figure>
         {{else}}
             <h3 class="aligncenter">Sorry, something went wrong!</h3>

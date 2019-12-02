@@ -22,6 +22,22 @@ a, nav a:visited
     padding-bottom: 3rem;
 }
 
+.padding-top
+{
+    padding-top: 1rem;
+}
+
+.roombtn
+{
+    display: inline;
+    font-family: 'Kalam', cursive;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 1rem;
+    background-color: #393939;
+}
+
 /******** RESPONSIVE DESIGN ********/
 
 /******** LAPTOP ********/

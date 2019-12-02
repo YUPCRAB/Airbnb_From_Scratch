@@ -7,10 +7,33 @@
 <div class="audivcon">
     <h1 class="aligncenter">{{user.FName}} {{user.LName}}, Welcome to MyAirBnb!</h1><br>
     <p class="aligncenter welcomeinfo">
+        If you are a first-time user, <br>
         Please be aware that an email has been sent to you for validation purpose. <br>
         If you have not received it within 30 minutes, please check your spam folder or contact us. <br>
         Thank you for choosing MyAirBnb!
     </p><br>
+    {{#if rooms}}
+    <h2 class="aligncenter">Booked Rooms</h2><br>
+    <div class="three-grids">
+        {{#each rooms}} 
+        <figure>
+            {{#if RoomPic}}
+                <a href="/admin/room/{{this._id}}"><img src="/RoomPics/{{RoomPic}}" class="headshot"></a>
+            {{else}}
+                <a href="#"><img src="/RoomPics/default.jpg" class="headshot"></a>
+            {{/if}}
+            <figcaption>{{title}}</figcaption>
+            <figcaption class="smallerfont">{{location}}</figcaption>
+            <br>
+            <form id="deleteButtonForm" method="POST" action="/user/delete/{{this._id}}?_method=DELETE" class="roombtn">
+                <input type="submit" class="roombtn" value="&nbsp;Cancel Booking&nbsp;" data-id="{{this.id}}" data-title="{{this.title}}">
+            </form>
+        </figure>
+        {{else}}
+            No rooms in database 
+        {{/each}}
+    </div>    
+    {{else}}
     <h2 class="aligncenter">Start Your Journey Now</h2><br>
     <div class="three-grids">
         <figure>
@@ -29,5 +52,6 @@
             <figcaption class="smallerfont">Starting from $39 CAD/night</figcaption>
         </figure>
     </div>
+    {{/if}}
     <br><br><br>
 </div>

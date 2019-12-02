@@ -6,6 +6,7 @@ const hasAccessUser= require("../middleware/authUser");
 
 //This allows you to pefrom CRUD operations on the User colections 
 const User = require("../models/User");
+const Room = require("../models/Room");
 
 
 router.get("/SignUp", (req, res)=>
@@ -94,45 +95,55 @@ router.post("/SignUp", (req, res)=>
             {
                 /******** MONGOOSE DATA RETRIEVE & SAVE ********/
 
-                const NewUser = new User(UserData);
-                NewUser.save()
-                .then (() =>{
-                    console.log('UserInfo was inserted into database')
-                })
-                .catch((err)=>{
-                    console.log(`UserInfo was not inserted into the database because ${err}`)
-                })
-                /******** SEND EMAIL ********/
-                
-                const nodemailer = require('nodemailer');
-                const sgTransport = require('nodemailer-sendgrid-transport');
+                bcrypt.genSalt(10)
+                    .then(salt=>{
+                        bcrypt.hash(req.body.crtpassword1,salt)
+                        .then(hash=>{
+                            UserData.PWD=hash;
+                            
+                            const NewUser = new User(UserData);
 
-                const options = {
-                    auth: {
-                        api_key: `${process.env.SENDGRID_API_KEY}`
-                    }
-                }
+                            NewUser.save()
+                            .then (() =>{
+                                console.log('UserInfo was inserted into database')
+                            })
+                            .catch((err)=>{
+                                console.log(`UserInfo was not inserted into the database because ${err}`)
+                            })
+                            
+                            /******** SEND EMAIL ********/
+                            
+                            const nodemailer = require('nodemailer');
+                            const sgTransport = require('nodemailer-sendgrid-transport');
 
-                const mailer = nodemailer.createTransport(sgTransport(options));
+                            const options = {
+                                auth: {
+                                    api_key: `${process.env.SENDGRID_API_KEY}`
+                                }
+                            }
 
-                const email = {
-                    to: `${req.body.emailadd}`,
-                    from: 'yxie68@myseneca.ca',
-                    subject: 'Welcome to MyAirBnb',
-                    text: 'This MyAirBnb site is for Seneca College Fall 2019 WEB322 student (142358167) assignment delivery only. No commercial use.',
-                    html: `<b><h3>Dear ${req.body.fname}:</h3></b><p>This MyAirBnb site is for Seneca College Fall 2019 WEB322 student (142358167) assignment delivery only. No commercial use.</p><b><h2>Thank you for your support!</h2></b>`
-                };
-                
-                mailer.sendMail(email, function(err, res) {
-                    if (err) { 
-                        console.log(err) 
-                    }
-                    console.log(res);
-                });
+                            const mailer = nodemailer.createTransport(sgTransport(options));
 
-                /******** REDIRECT ********/
-                req.session.userInfo = NewUser;
-                res.redirect("/user/dashboard");
+                            const email = {
+                                to: `${req.body.emailadd}`,
+                                from: 'yxie68@myseneca.ca',
+                                subject: 'Welcome to MyAirBnb',
+                                text: 'This MyAirBnb site is for Seneca College Fall 2019 WEB322 student (142358167) assignment delivery only. No commercial use.',
+                                html: `<b><h3>Dear ${req.body.fname}:</h3></b><p>This MyAirBnb site is for Seneca College Fall 2019 WEB322 student (142358167) assignment delivery only. No commercial use.</p><b><h2>Thank you for your support!</h2></b>`
+                            };
+                            
+                            mailer.sendMail(email, function(err, res) {
+                                if (err) { 
+                                    console.log(err) 
+                                }
+                                console.log(res);
+                            });
+
+                            /******** REDIRECT ********/
+                            req.session.userInfo = NewUser;
+                            res.redirect("/user/dashboard");
+                        })
+                    })
             }
         }
     })
@@ -200,9 +211,14 @@ router.post("/Login", (req, res)=>
 
 router.get("/dashboard", hasAccessUser, (req, res)=>
 {
-    res.render('User/dash');
+    User.findById(req.session.userInfo._id)
+    .then((user) =>{
+        res.render('User/dash',
+        {
+            rooms:user.BookedRooms
+        });
+    })
 });
-
 
 router.get("/logout",(req,res)=>{
 
@@ -212,5 +228,31 @@ router.get("/logout",(req,res)=>{
 
 });
 
+router.delete("/delete/:id", hasAccessUser, (req,res)=>
+{
+    Room.findById(req.params.id)
+        .then((room) =>{
+            //console.log(`${room}`)
+            User.findById(req.session.userInfo._id)
+                .then((user) =>{
+                    //console.log(`${user}`)
+                    user.BookedRooms.id(room._id).remove()
+                    user.save()
+                    res.render('User/dash',
+                    {
+                        rooms:user.BookedRooms
+                    });
+                })
+                
+            //req.session.userInfo.BookedRooms.push(room)
+        })
+        .catch(err=>console.log(`Error : ${err}`));    
+    // Room.deleteOne({_id:req.params.id})
+    // .then((room)=>{
+
+    //     res.redirect("/user/dashboard");
+    // })
+    // .catch(err=>console.log(`Error : ${err}`));
+});
 
 module.exports=router;

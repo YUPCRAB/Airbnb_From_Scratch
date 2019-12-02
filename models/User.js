@@ -5,6 +5,37 @@ const mongoose = require('mongoose');
 
 const bcrypt = require('bcryptjs');
 
+const Rooms = mongoose.Schema;
+
+const RoomSchema = new Rooms({
+    title: 
+    {
+        type: String,
+        required: true
+    },
+    price: 
+    {
+        type: Number,
+        required: true
+    },
+    detail: 
+    {
+        type: String,
+        required: true
+    },
+    location: 
+    {
+        type: String,
+        required: true
+    },
+    RoomPic:
+    {
+        type: String
+    }
+});
+
+//const Room = mongoose.model('Room', RoomSchema);
+
 const Users = mongoose.Schema;
 
 const UserSchema = new Users({
@@ -44,23 +75,25 @@ const UserSchema = new Users({
         type: Boolean,
         required: false,
         default: false
+    },
+    BookedRooms:
+    {
+        type: [RoomSchema]
     }
 });
 
-UserSchema.pre("save",function(next){
+// UserSchema.pre("save",function(next){
   
-    bcrypt.genSalt(10)
-    .then(salt=>{
-        bcrypt.hash(this.PWD,salt)
-        .then(hash=>{
-            this.PWD = hash
-            // The below code is a call back function that does the following :
-             //It forces the code of execution to  move onto the next code in the execution queue 
-            next();
-        })
-    })
+//     bcrypt.genSalt(10)
+//     .then(salt=>{
+//         bcrypt.hash(this.PWD,salt)
+//         .then(hash=>{
+//             this.PWD = hash
+//             next();
+//         })
+//     })
 
-})
+// })
 
 const User = mongoose.model('User', UserSchema);
 
