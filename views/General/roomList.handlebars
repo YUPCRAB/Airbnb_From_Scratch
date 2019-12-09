@@ -4,6 +4,7 @@
 
 <div class="audivcon">
     <h1 class="aligncenter audivcon">Check Out Our Listings</h1>
+    {{#each message}}<div class="errs alignleft">{{this}}</div><br><br>{{/each}}
     <div class="three-grids">
         {{#each rooms}} 
         <figure>
