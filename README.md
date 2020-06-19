@@ -3,8 +3,6 @@
 This application was originally created as an assignment for one the courses I took in college. 
 Until recently, I have continued to upgrade and test the code to incorporate new features 
 and functions even after that course was finished. 
-I kept it private out of the concern that other student would copy it and I might unkonwingly 
-contribute to academic dishonesty. 
 
 Features that will be added to the application
 - Pagination
