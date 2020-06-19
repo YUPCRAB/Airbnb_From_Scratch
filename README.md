@@ -1,5 +1,4 @@
-# F2019_WEB322
-MyAirBnb Project
+# YUPCRAB/Airbnb_From_Scratch
 
 This application was originally created as an assignment for one the courses I took in college. 
 Until recently, I have continued to upgrade and test the code to incorporate new features 
@@ -13,7 +12,7 @@ Features that will be added to the application
 
 
 
-Website link: https://myairbnb-web322.herokuapp.com/
+# Website link: https://myairbnb-web322.herokuapp.com/
 
 
 
