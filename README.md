@@ -15,11 +15,6 @@ Features that will be added to the application
 
 Website link: https://myairbnb-web322.herokuapp.com/
 
-Login info for testing: 
-- Admin: yxie68@myseneca.ca (PIN: Yushi123!)
-- Regular User: xyt369@hotmail.com (PIN: Yushi123!)
-- Please feel free to register as new user (regular user)
-
 
 
 Please see following for details of this project.
